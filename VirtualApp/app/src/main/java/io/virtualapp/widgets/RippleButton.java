@@ -11,11 +11,12 @@ import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.os.Build;
-import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
+
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -228,7 +229,7 @@ public class RippleButton extends AppCompatButton {
             return;
         }
 
-        canvas.save(Canvas.CLIP_SAVE_FLAG);
+        canvas.save();
 
         mPath.reset();
         mPath.addCircle(mDownX, mDownY, mRadius, Path.Direction.CW);
